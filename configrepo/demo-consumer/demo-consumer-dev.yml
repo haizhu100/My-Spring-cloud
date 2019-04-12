@@ -1,0 +1,22 @@
+# 服务端口
+server: 
+  port: 8082
+
+# 配置应用名称
+spring:
+  application: 
+    name: demo-consumer
+
+
+#客户端精准流控功能配置
+flowcontrol:
+  lockname: democonsumer #分布式锁名，建议直接用服务名，不重复即可
+  threshold: 22 #//限流策略中的T时间内最大访问量(阈值).    
+  interval: 5 #//配置文件中配置 限流策略中出现的时间间隔(周期))，注意配置的时候按秒计时
+
+#注册中心地址
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
