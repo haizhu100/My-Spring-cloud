@@ -1,0 +1,27 @@
+# 服务端口
+server: 
+  port: 9050
+# 配置微服务的名称
+spring: 
+  application: 
+    name: paas-configserver
+  # 配置git仓库
+  cloud:
+   config:
+     server:
+       git: 
+         uri: https://github.com/haizhu100/My-Spring-cloud.git #配置git配置仓库
+         searchPaths: configrepo,configrepo/*
+         username: haizhu_cheng@163.com
+         password: Pearl0706
+     lable: master
+     profile: dev
+     
+
+# 配置注册中心的地址
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    healthcheck: 
+      enabled: true #开启健康检查

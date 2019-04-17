@@ -1,0 +1,16 @@
+spring: 
+  application: 
+    name: service-eureka
+
+server:
+  port: 8761
+
+eureka:
+  client:
+    register-with-eureka: false #不作为客户端注册到注册中心
+    fetch-registry: false  #设置为true时，可以启动，但报异常
+#    service-url:
+#      defaultzone: http://localhost:8000/eureka/        #进行高可用设置时，将register-with-eureka 设置为true，默认，更改端口即可
+  server:
+    enable-self-preservation: false  #关闭自我保护
+#    eviction-interval-timer-in-ms: 3000  #清理间隔（单位毫秒）
